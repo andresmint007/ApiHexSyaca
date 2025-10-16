@@ -51,4 +51,8 @@ Este proyecto es una API desarrollada en **.NET 8** utilizando el **patrón de a
 ├── Infrastructure/           → Adaptadores que implementan los puertos (repositorios)
 ├── Infraestructure.Data/     → DbContext y configuración EF Core
 r
-Copiar código
+
+Faltantes por premuras de tiempo:
+Implementar middlewares para cada capa para asi tener una descripcion de los errores en cada end-to-ends por eso solo los metodos fianles tienen try catch peusot que se debe implementar este middleware
+Generar pruebas unitarias, debido al desacople de esta manera es sencillo generar pruebas unitarias.
+
