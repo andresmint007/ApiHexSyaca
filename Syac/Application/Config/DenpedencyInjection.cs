@@ -1,4 +1,5 @@
-﻿using Application.UsesCases.Querys;
+﻿using Application.UsesCases.Commands;
+using Application.UsesCases.Querys;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,6 +16,8 @@ namespace Application.Config
                cfg.RegisterServicesFromAssemblyContaining<GetAllEstadosQueryHandler>());
             services.AddMediatR(cfg =>
                cfg.RegisterServicesFromAssemblyContaining<GetAllProductosQueryHandler>());
+            services.AddMediatR(cfg =>
+              cfg.RegisterServicesFromAssemblyContaining<CreatePedidoCommandHandler>());
             return services;
 
         }

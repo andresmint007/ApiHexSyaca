@@ -16,6 +16,7 @@ namespace Infraestructure.Config
             services.AddScoped<IProductoRepository, ProductoRepository>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IParametricosRepository, ParametricosRepository>();
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
 
             return services;
         }
