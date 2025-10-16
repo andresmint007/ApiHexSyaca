@@ -18,6 +18,8 @@ namespace Application.Config
                cfg.RegisterServicesFromAssemblyContaining<GetAllProductosQueryHandler>());
             services.AddMediatR(cfg =>
               cfg.RegisterServicesFromAssemblyContaining<CreatePedidoCommandHandler>());
+            services.AddMediatR(cfg =>
+              cfg.RegisterServicesFromAssemblyContaining<GetAllPedidosQueryHandler>());
             return services;
 
         }

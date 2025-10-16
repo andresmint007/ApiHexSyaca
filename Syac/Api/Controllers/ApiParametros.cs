@@ -1,4 +1,5 @@
-﻿using Application.UsesCases.Querys;
+﻿using Application.Dtos;
+using Application.UsesCases.Querys;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,19 +16,20 @@ namespace Api.Controllers
             {
                 var result = await mediator.Send(new GetAllClientesQuery());
                 return Results.Ok(result);
-            });
+            }).Produces<List<ClienteDto>>(StatusCodes.Status200OK);
+            
 
             group.MapGet("/productos", async ([FromServices] IMediator mediator) =>
             {
                 var result = await mediator.Send(new GetAllProductosQuery());
                 return Results.Ok(result);
-            });
+            }).Produces<List<ProductoDto>>(StatusCodes.Status200OK);
 
             group.MapGet("/estados", async ([FromServices] IMediator mediator) =>
             {
                 var result = await mediator.Send(new GetAllEstadosQuery());
                 return Results.Ok(result);
-            });
+            }).Produces<List<EstadoDto>>(StatusCodes.Status200OK);
         }
         }
     

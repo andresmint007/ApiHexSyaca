@@ -1,5 +1,7 @@
-﻿using Domain.Entities;
+﻿using Application.Dtos;
+using Domain.Entities;
 using Domain.Ports;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using static Infraestructure.Repository.Persistance;
 
@@ -41,6 +43,16 @@ namespace Infraestructure.Repository.Adapters
                 await transaction.RollbackAsync();
                 throw;
             }
+        }
+        public async Task<List<Pedido>> GetAllPedidosAsync()
+        {
+            return await _context.Pedidos
+                    .Include(p => p.Cliente)
+                    .Include(p => p.Estado)
+                    .Include(p => p.Prioridad)
+                    .Include(p => p.Detalles)
+                        .ThenInclude(d => d.Producto)
+                    .ToListAsync();
         }
     }
 
