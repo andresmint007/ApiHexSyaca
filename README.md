@@ -10,7 +10,7 @@ Este proyecto es una API desarrollada en **.NET 8** utilizando el **patrón de a
 - ✅ **Inyección de dependencias modular**: Cada capa tiene su propia clase de configuración para registrar dependencias, evitando la saturación del `Program.cs`.
 - ✅ **Sin dependencias innecesarias**: Por ejemplo, el proyecto de dominio no referencia bibliotecas externas, asegurando su aislamiento.
 - ✅ **Uso de MediatR (patrón mediador)**: Cada caso de uso está separado como un `Command` o `Query`, siguiendo el principio de responsabilidad única.
-- ✅ **Minimal API**: Se utiliza para simplificar el código y reducir la sobrecarga, ideal para APIs pequeñas o medianas.
+- ✅ **Minimal API**: Se utiliza para simplificar el código y reducir la sobrecarga, ideal para APIs pequeñas o medianas. Ademas facilita la implementacion de la documentación con el metodo `Produces`
 
 ---
 
